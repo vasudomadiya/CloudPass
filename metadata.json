@@ -1,0 +1,6 @@
+{
+  "name": "CloudPass",
+  "description": "A secure, temporary file-sharing platform that lets you upload any file and generate a unique code for instant download. No account or login required.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

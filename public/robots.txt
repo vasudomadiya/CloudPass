@@ -1,0 +1,11 @@
+# CloudPass Robots.txt - SEO Optimized
+User-agent: *
+Allow: /
+
+# Exclude backend APIs, upload directories, and admin panels from crawler search indices
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /admin/
+
+# Point search crawlers to our XML sitemap
+Sitemap: https://cloudpass.vercel.app/sitemap.xml
