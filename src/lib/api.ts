@@ -112,7 +112,7 @@ const formatSpeed = (bps: number): string => {
 
 // Fetch single file info
 export const fetchFileInfo = async (code: string): Promise<FileMetadata> => {
-  const res = await fetch(getApiUrl(`/api/file/${encodeURIComponent(code)`));
+  const res = await fetch(getApiUrl(`/api/file/${encodeURIComponent(code)}`));
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
     throw new Error(
@@ -128,13 +128,16 @@ export const downloadFile = async (
   password?: string,
   fileId?: string,
 ): Promise<void> => {
-  const res = await fetch(getApiUrl(`/api/download/${encodeURIComponent(code)}`), {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
+  const res = await fetch(
+    getApiUrl(`/api/download/${encodeURIComponent(code)}`),
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ password, fileId }),
     },
-    body: JSON.stringify({ password, fileId }),
-  });
+  );
 
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
@@ -168,13 +171,16 @@ export const deleteFileEarly = async (
   code: string,
   deleteToken: string,
 ): Promise<void> => {
-  const res = await fetch(getApiUrl(`/api/file/delete/${encodeURIComponent(code)}`), {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
+  const res = await fetch(
+    getApiUrl(`/api/file/delete/${encodeURIComponent(code)}`),
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ deleteToken }),
     },
-    body: JSON.stringify({ deleteToken }),
-  });
+  );
 
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
@@ -196,9 +202,12 @@ export const fetchAdminStats = async (): Promise<{
 
 // Admin delete file override
 export const adminDeleteFile = async (code: string): Promise<void> => {
-  const res = await fetch(getApiUrl(`/api/admin/file/${encodeURIComponent(code)}`), {
-    method: "DELETE",
-  });
+  const res = await fetch(
+    getApiUrl(`/api/admin/file/${encodeURIComponent(code)}`),
+    {
+      method: "DELETE",
+    },
+  );
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
     throw new Error(errorData.error || "Failed to delete file by admin.");
