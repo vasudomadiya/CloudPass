@@ -1,12 +1,29 @@
 import { FileMetadata, AdminStats, AutoHealStatus } from "../types";
 
+// API Base URL - use environment variable or default to current origin
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  (() => {
+    if (
+      typeof window !== "undefined" &&
+      window.location.hostname === "localhost"
+    ) {
+      return "http://localhost:3000";
+    }
+    return window.location.origin;
+  })();
+
+export const getApiUrl = (endpoint: string): string => {
+  return `${API_BASE_URL}${endpoint}`;
+};
+
 export const formatBytes = (bytes: number, decimals = 1): string => {
-  if (bytes === 0) return '0 Bytes';
+  if (bytes === 0) return "0 Bytes";
   const k = 1024;
   const dm = decimals < 0 ? 0 : decimals;
-  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+  const sizes = ["Bytes", "KB", "MB", "GB"];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 };
 
 export const uploadFile = async (
@@ -14,25 +31,25 @@ export const uploadFile = async (
   expiry: string,
   downloadLimit: string,
   password?: string,
-  codeType: 'numeric' | 'alphanumeric' = 'numeric',
-  onProgress?: (percent: number, speed: string, eta: string) => void
+  codeType: "numeric" | "alphanumeric" = "numeric",
+  onProgress?: (percent: number, speed: string, eta: string) => void,
 ): Promise<{ file: FileMetadata; deleteToken: string }> => {
   return new Promise((resolve, reject) => {
     const formData = new FormData();
     if (Array.isArray(files)) {
-      files.forEach(f => {
-        formData.append('files', f);
+      files.forEach((f) => {
+        formData.append("files", f);
       });
     } else {
-      formData.append('files', files);
+      formData.append("files", files);
     }
-    formData.append('expiry', expiry);
-    formData.append('downloadLimit', downloadLimit);
-    if (password) formData.append('password', password);
-    formData.append('codeType', codeType);
+    formData.append("expiry", expiry);
+    formData.append("downloadLimit", downloadLimit);
+    if (password) formData.append("password", password);
+    formData.append("codeType", codeType);
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/api/upload', true);
+    xhr.open("POST", getApiUrl("/api/upload"), true);
 
     const startTime = Date.now();
 
@@ -41,17 +58,18 @@ export const uploadFile = async (
         const percent = Math.round((e.loaded / e.total) * 100);
         const now = Date.now();
         const duration = (now - startTime) / 1000; // in seconds
-        
+
         if (duration > 0) {
           const speedBps = e.loaded / duration; // bytes per second
           const speedStr = formatSpeed(speedBps);
-          
+
           const remainingBytes = e.total - e.loaded;
           const etaSecs = Math.round(remainingBytes / speedBps);
-          const etaStr = etaSecs > 60 
-            ? `${Math.floor(etaSecs / 60)}m ${etaSecs % 60}s` 
-            : `${etaSecs}s`;
-            
+          const etaStr =
+            etaSecs > 60
+              ? `${Math.floor(etaSecs / 60)}m ${etaSecs % 60}s`
+              : `${etaSecs}s`;
+
           onProgress(percent, speedStr, etaStr);
         } else {
           onProgress(percent, "Calculating...", "Calculating...");
@@ -94,43 +112,49 @@ const formatSpeed = (bps: number): string => {
 
 // Fetch single file info
 export const fetchFileInfo = async (code: string): Promise<FileMetadata> => {
-  const res = await fetch(`/api/file/${encodeURIComponent(code)}`);
+  const res = await fetch(getApiUrl(`/api/file/${encodeURIComponent(code)`));
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.error || `Error ${res.status}: Failed to load file.`);
+    throw new Error(
+      errorData.error || `Error ${res.status}: Failed to load file.`,
+    );
   }
   return res.json();
 };
 
 // Request/Trigger download stream
-export const downloadFile = async (code: string, password?: string, fileId?: string): Promise<void> => {
-  const res = await fetch(`/api/download/${encodeURIComponent(code)}`, {
-    method: 'POST',
+export const downloadFile = async (
+  code: string,
+  password?: string,
+  fileId?: string,
+): Promise<void> => {
+  const res = await fetch(getApiUrl(`/api/download/${encodeURIComponent(code)}`), {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({ password, fileId })
+    body: JSON.stringify({ password, fileId }),
   });
 
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.error || 'Download failed.');
+    throw new Error(errorData.error || "Download failed.");
   }
 
   // Handle the response as a file stream trigger
-  const disposition = res.headers.get('Content-Disposition');
-  let filename = 'download';
-  if (disposition && disposition.indexOf('attachment') !== -1) {
+  const disposition = res.headers.get("Content-Disposition");
+  let filename = "download";
+  if (disposition && disposition.indexOf("attachment") !== -1) {
     const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
     const matches = filenameRegex.exec(disposition);
-    if (matches != null && matches[1]) { 
-      filename = decodeURIComponent(matches[1].replace(/['"]/g, ''));
+    if (matches != null && matches[1]) {
+      filename = decodeURIComponent(matches[1].replace(/['"]/g, ""));
     }
   }
 
   const blob = await res.blob();
   const url = window.URL.createObjectURL(blob);
-  const a = document.createElement('a');
+  const a = document.createElement("a");
   a.href = url;
   a.download = filename;
   document.body.appendChild(a);
@@ -140,46 +164,52 @@ export const downloadFile = async (code: string, password?: string, fileId?: str
 };
 
 // Delete early using code & deleteToken
-export const deleteFileEarly = async (code: string, deleteToken: string): Promise<void> => {
-  const res = await fetch(`/api/file/delete/${encodeURIComponent(code)}`, {
-    method: 'POST',
+export const deleteFileEarly = async (
+  code: string,
+  deleteToken: string,
+): Promise<void> => {
+  const res = await fetch(getApiUrl(`/api/file/delete/${encodeURIComponent(code)}`), {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({ deleteToken })
+    body: JSON.stringify({ deleteToken }),
   });
 
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.error || 'Failed to delete file.');
+    throw new Error(errorData.error || "Failed to delete file.");
   }
 };
 
 // Get Admin stats and logs
-export const fetchAdminStats = async (): Promise<{ stats: AdminStats; files: FileMetadata[] }> => {
-  const res = await fetch('/api/admin/stats');
+export const fetchAdminStats = async (): Promise<{
+  stats: AdminStats;
+  files: FileMetadata[];
+}> => {
+  const res = await fetch(getApiUrl("/api/admin/stats"));
   if (!res.ok) {
-    throw new Error('Failed to retrieve admin stats.');
+    throw new Error("Failed to retrieve admin stats.");
   }
   return res.json();
 };
 
 // Admin delete file override
 export const adminDeleteFile = async (code: string): Promise<void> => {
-  const res = await fetch(`/api/admin/file/${encodeURIComponent(code)}`, {
-    method: 'DELETE'
+  const res = await fetch(getApiUrl(`/api/admin/file/${encodeURIComponent(code)}`), {
+    method: "DELETE",
   });
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.error || 'Failed to delete file by admin.');
+    throw new Error(errorData.error || "Failed to delete file by admin.");
   }
 };
 
 // Get real-time system self-healing statistics
 export const fetchAutoHealStatus = async (): Promise<AutoHealStatus> => {
-  const res = await fetch('/api/health/auto-heal');
+  const res = await fetch(getApiUrl("/api/health/auto-heal"));
   if (!res.ok) {
-    throw new Error('Failed to retrieve self-healing metrics.');
+    throw new Error("Failed to retrieve self-healing metrics.");
   }
   return res.json();
 };

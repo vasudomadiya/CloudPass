@@ -1,4 +1,4 @@
-# CloudPass Robots.txt - SEO Optimized
+# FilePass26 Robots.txt - SEO Optimized
 User-agent: *
 Allow: /
 
@@ -8,4 +8,4 @@ Disallow: /uploads/
 Disallow: /admin/
 
 # Point search crawlers to our XML sitemap
-Sitemap: https://cloudpass.vercel.app/sitemap.xml
+Sitemap: https://filepass26.vercel.app/sitemap.xml
