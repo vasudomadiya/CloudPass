@@ -1,4 +1,12 @@
 ﻿import { createApp } from "./backend/app";
+import fs from "fs";
+import path from "path";
+
+// Ensure required directories and files exist
+const uploadsDir = path.join(process.cwd(), "uploads");
+const dbFile = path.join(process.cwd(), "db.json");
+if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
+if (!fs.existsSync(dbFile)) fs.writeFileSync(dbFile, "[]", "utf8");
 
 const PORT = parseInt(process.env.PORT || '3000', 10);
 
