@@ -1,4 +1,6 @@
 import express from "express";
+import path from "path";
+import fs from "fs";
 import apiRouter from "./routes/api";
 import { cleanExpiredFiles } from "./services/fileService";
 
@@ -7,18 +9,26 @@ export async function createApp() {
 
   app.use(express.json());
 
-  // API Routes - All backend logic separated here
+  // API Routes
   app.use("/api", apiRouter);
 
-  // Health check for monitoring
+  // Health check
   app.get("/health", (req, res) => {
     res.json({ status: "ok", service: "filepass26-backend" });
   });
 
-  // 404 for undefined routes
-  app.use((req, res) => {
-    res.status(404).json({ error: "Not found" });
-  });
+  // Serve frontend static files in production
+  const distPath = path.join(process.cwd(), "dist");
+  if (fs.existsSync(distPath)) {
+    app.use(express.static(distPath));
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(distPath, "index.html"));
+    });
+  } else {
+    app.use((req, res) => {
+      res.status(404).json({ error: "Not found" });
+    });
+  }
 
   return app;
 }

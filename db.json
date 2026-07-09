@@ -1,0 +1,52 @@
+[
+  {
+    "id": "files-1783587384854-563137900.txt",
+    "code": "197494",
+    "filename": "files-1783587384854-563137900.txt",
+    "originalName": "Lead.txt",
+    "fileType": "text/plain",
+    "fileSize": 146597,
+    "files": [
+      {
+        "id": "files-1783587384854-563137900.txt",
+        "filename": "files-1783587384854-563137900.txt",
+        "originalName": "Lead.txt",
+        "fileType": "text/plain",
+        "fileSize": 146597
+      }
+    ],
+    "expiry": "2026-07-09T09:56:24.864Z",
+    "expiryDuration": "1 Hour",
+    "downloadLimit": 1,
+    "downloadCount": 0,
+    "createdAt": "2026-07-09T08:56:24.865Z",
+    "status": "expired",
+    "isPasswordProtected": false,
+    "deleteToken": "UXBJD7YN"
+  },
+  {
+    "id": "files-1783587422964-41266067.txt",
+    "code": "FE5QEQ8N",
+    "filename": "files-1783587422964-41266067.txt",
+    "originalName": "lead1.txt",
+    "fileType": "text/plain",
+    "fileSize": 34080,
+    "files": [
+      {
+        "id": "files-1783587422964-41266067.txt",
+        "filename": "files-1783587422964-41266067.txt",
+        "originalName": "lead1.txt",
+        "fileType": "text/plain",
+        "fileSize": 34080
+      }
+    ],
+    "expiry": "2026-07-16T08:57:02.968Z",
+    "expiryDuration": "7 Days",
+    "downloadLimit": 5,
+    "downloadCount": 0,
+    "createdAt": "2026-07-09T08:57:02.973Z",
+    "status": "active",
+    "isPasswordProtected": false,
+    "deleteToken": "MDMUZANL"
+  }
+]

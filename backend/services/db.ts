@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { FileMetadata } from "../types";
+import { FileMetadata } from "../../src/types";
 
 const DB_FILE = path.join(process.cwd(), "db.json");
 const DB_BACKUP_FILE = path.join(process.cwd(), "db.backup.json");

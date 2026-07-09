@@ -3,7 +3,7 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 import AdmZip from "adm-zip";
-import { FileMetadata, AdminStats } from "../../../src/types";
+import { FileMetadata, AdminStats } from "../../src/types";
 import { readDB, writeDB, autoHealLogs } from "../services/db";
 import {
   generateCode,

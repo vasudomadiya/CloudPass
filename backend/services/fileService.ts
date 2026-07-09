@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { FileMetadata } from "../../../src/types";
+import { FileMetadata } from "../../src/types";
 import { readDB, writeDB, autoHealLogs } from "./db";
 
 const UPLOADS_DIR = path.join(process.cwd(), "uploads");
