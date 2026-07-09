@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { UploadCloud, Eye, EyeOff, ShieldAlert, KeyRound, Clock, Flame, FileText, RefreshCw, XCircle, Lock, ShieldCheck, HardDrive, Cpu, Check } from 'lucide-react';
+import { UploadCloud, Eye, EyeOff, ShieldAlert, KeyRound, Clock, Flame, FileText, RefreshCw, XCircle, Lock, ShieldCheck, Cpu, Check } from 'lucide-react';
 import { motion } from 'motion/react';
 import { uploadFile, formatBytes } from '../lib/api';
 import { FileMetadata } from '../types';
@@ -30,9 +30,9 @@ export default function UploadCard({ onUploadSuccess }: UploadCardProps) {
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (e.type === "dragenter" || e.type === "dragover") {
+    if (e.type === 'dragenter' || e.type === 'dragover') {
       setIsDragActive(true);
-    } else if (e.type === "dragleave") {
+    } else if (e.type === 'dragleave' || e.type === 'dragend') {
       setIsDragActive(false);
     }
   };
@@ -41,17 +41,16 @@ export default function UploadCard({ onUploadSuccess }: UploadCardProps) {
     e.preventDefault();
     e.stopPropagation();
     setIsDragActive(false);
-
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      const selectedList = Array.from(e.dataTransfer.files) as File[];
-      const oversized = selectedList.find(f => f.size > 5 * 1024 * 1024 * 1024);
-      if (oversized) {
-        setError('Each file must be less than 5GB.');
-        return;
-      }
-      setFiles(prev => [...prev, ...selectedList]);
-      setError('');
+    const dropped = e.dataTransfer.files;
+    if (!dropped || dropped.length === 0) return;
+    const selectedList = Array.from(dropped) as File[];
+    const oversized = selectedList.find(f => f.size > 5 * 1024 * 1024 * 1024);
+    if (oversized) {
+      setError('Each file must be less than 5GB.');
+      return;
     }
+    setFiles(prev => [...prev, ...selectedList]);
+    setError('');
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -125,12 +124,22 @@ export default function UploadCard({ onUploadSuccess }: UploadCardProps) {
 
       {!isUploading ? (
         <>
+          {/* Hidden file input - always mounted */}
+          <input 
+            ref={fileInputRef}
+            type="file" 
+            onChange={handleFileChange}
+            className="hidden" 
+            multiple
+          />
+
           {/* File Drag and Drop Zone */}
           {files.length === 0 ? (
             <div
               onDragEnter={handleDrag}
               onDragOver={handleDrag}
               onDragLeave={handleDrag}
+              onDragEnd={handleDrag}
               onDrop={handleDrop}
               onClick={triggerFileSelect}
               className={`group relative h-56 border-2 border-dashed rounded-2xl flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
@@ -139,13 +148,6 @@ export default function UploadCard({ onUploadSuccess }: UploadCardProps) {
                   : 'border-white/10 hover:border-indigo-500/50 hover:bg-white/2 hover:scale-[1.01]'
               }`}
             >
-              <input 
-                ref={fileInputRef}
-                type="file" 
-                onChange={handleFileChange}
-                className="hidden" 
-                multiple
-              />
               <UploadCloud 
                 className={`w-12 h-12 mb-3 transition-all duration-300 ${
                   isDragActive 

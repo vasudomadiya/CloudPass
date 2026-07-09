@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Database, Download, CalendarClock, Trash2, Search, HeartPulse, RefreshCw, Layers, CheckCircle, Cpu, Terminal, ShieldAlert } from 'lucide-react';
+import { Shield, Database, Download, Trash2, Search, HeartPulse, RefreshCw, Layers, CheckCircle, Cpu, Terminal } from 'lucide-react';
 import { fetchAdminStats, adminDeleteFile, formatBytes, fetchAutoHealStatus } from '../lib/api';
 import { FileMetadata, AdminStats, AutoHealStatus } from '../types';
 

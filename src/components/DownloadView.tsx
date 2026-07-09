@@ -179,7 +179,9 @@ export default function DownloadView({ file, onReset }: DownloadViewProps) {
             <div className="flex items-center gap-1.5 text-white">
               <Hash className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0" />
               <span className="font-sans text-xs font-bold truncate">
-                {file.downloadLimit === null ? 'Unlimited Downloads' : `${file.downloadLimit} downloads left`}
+                {file.downloadLimit === null
+                  ? 'Unlimited Downloads'
+                  : `${Math.max(0, file.downloadLimit - file.downloadCount)} downloads left`}
               </span>
             </div>
           </div>

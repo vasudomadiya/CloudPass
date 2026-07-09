@@ -1,6 +1,6 @@
 ﻿import { createApp } from "./backend/app";
 
-const PORT = 3000;
+const PORT = parseInt(process.env.PORT || '3000', 10);
 
 async function startServer() {
   const app = await createApp();
@@ -17,4 +17,3 @@ startServer().catch((err) => {
   console.error("Failed to start server:", err);
   process.exit(1);
 });
-  

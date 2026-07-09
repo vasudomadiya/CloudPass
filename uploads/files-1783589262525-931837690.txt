@@ -1,0 +1,293 @@
+| --: | -------------------------- | -------------------- | ------------------ | ---------------- |
+| 901 | Baked Bliss Bakery & Cafes | Bakery & Café        | Gota               | Public Listing   |
+| 902 | Four Coffee                | Café                 | CG Road            | Public Profile   |
+| 903 | Crush Coffee               | Café                 | CG Road            | +91 83206 12851  |
+| 904 | Nook By Grace Coffee Co.   | Coffee Café          | Navrangpura        | Public Profile   |
+| 905 | Leafy Lion                 | Café                 | Navrangpura        | Public Profile   |
+| 906 | Thali Buddy                | Restaurant           | Navrangpura        | +91 93135 08784  |
+| 907 | One Bite Ahmedabad Gujarat | Fast Food Restaurant | Gota               | +91 79 4039 3059 |
+| 908 | Smoochys                   | Café / Restaurant    | Khanpur            | +91 95107 33743  |
+| 909 | Aamchur                    | Restaurant           | Panjrapole         | Public Listing   |
+| 910 | Tent Rooftop Restaurant    | Rooftop Restaurant   | Navrangpura        | Public Profile   |
+| 911 | Ame Cafe & Patisserie      | Café                 | Bodakdev           | Public Profile   |
+| 912 | The Dark Roast             | Coffee Café          | SG Highway         | +91 79 4892 3777 |
+| 913 | Caffix – The Tech Cafe     | Work Café            | Thaltej            | +91 82000 19173  |
+| 914 | Wagh Bakri Tea Lounge      | Tea Café             | Ambawadi           | +91 83477 74700  |
+| 915 | Mocha Bodakdev             | Café                 | Bodakdev           | +91 97252 00002  |
+| 916 | Big Scoop Cafe             | Café                 | CG Road            | +91 97274 57314  |
+| 917 | Karma Cafe                 | Café                 | Ashram Road        | +91 79 2754 0635 |
+| 918 | Cafe De Italiano           | Café                 | Sindhu Bhavan Road | +91 93280 78019  |
+| 919 | Terra Cafe                 | Café                 | Bopal              | Public Listing   |
+| 920 | Bubble Pop Cafe            | Café                 | Ahmedabad          | Public Profile   |
+|   # | Business                 | Category     | Area               | Phone            |
+| --: | ------------------------ | ------------ | ------------------ | ---------------- |
+| 921 | Mitti Lifestyle Cafe     | Organic Café | Ambli–Bopal Road   | +91 89809 95630  |
+| 922 | Skryf Cafe               | Book Café    | Navrangpura        | Public Profile   |
+| 923 | The Toilet Cafe          | Theme Café   | Ashram Road        | +91 79 2755 8052 |
+| 924 | Seva Cafe                | Charity Café | Ambawadi           | Public Profile   |
+| 925 | Java+                    | Café         | Law Garden         | Public Profile   |
+| 926 | Lucky Tea Stall          | Tea Café     | Lal Darwaja        | Public Profile   |
+| 927 | Bubble Pop               | Café         | Panjrapole         | Public Profile   |
+| 928 | SliceLine Cafe           | Café         | Panjrapole         | Public Profile   |
+| 929 | Talk Cafe                | Café         | Ahmedabad          | Public Profile   |
+| 930 | Kamla Cafe               | Café         | Iscon–Ambli        | Public Profile   |
+| 931 | Mitti Cafe               | Café         | One42, Ambli       | +91 89809 95630  |
+| 932 | The Dark Roast           | Coffee Café  | SG Highway         | +91 79 4892 3777 |
+| 933 | Caffix – The Tech Cafe   | Work Café    | Thaltej            | +91 82000 19173  |
+| 934 | Wagh Bakri Tea Lounge    | Tea Café     | Ambawadi           | +91 83477 74700  |
+| 935 | Big Scoop Cafe           | Café         | CG Road            | +91 97274 57314  |
+| 936 | Cafe De Italiano         | Café         | Sindhu Bhavan Road | +91 93280 78019  |
+| 937 | Crush Coffee             | Café         | CG Road            | +91 83206 12851  |
+| 938 | Four Coffee              | Café         | CG Road            | Public Profile   |
+| 939 | Nook By Grace Coffee Co. | Coffee Café  | Navrangpura        | Public Profile   |
+| 940 | Leafy Lion               | Café         | Navrangpura        | Public Profile   |
+|   # | Business                       | Category                | Area               | Phone            |
+| --: | ------------------------------ | ----------------------- | ------------------ | ---------------- |
+| 941 | Baked Bliss Bakery & Cafes     | Bakery & Café           | Gota               | Public Listing   |
+| 942 | Thali Buddy                    | Thali Restaurant        | Navrangpura        | +91 93135 08784  |
+| 943 | One Bite Ahmedabad Gujarat     | Fast Food Restaurant    | Gota               | +91 79 4039 3059 |
+| 944 | Smoochys                       | Café & Restaurant       | Khanpur            | +91 95107 33743  |
+| 945 | Aamchur                        | North Indian Restaurant | Panjrapole         | Public Listing   |
+| 946 | Tent Rooftop Restaurant        | Rooftop Restaurant      | Navrangpura        | Public Listing   |
+| 947 | Nook By Grace Coffee Co.       | Coffee Café             | Navrangpura        | Public Profile   |
+| 948 | Sip Of Hope – The Coffee House | Café                    | Bodakdev           | Public Profile   |
+| 949 | Camilo Coffee                  | Café                    | Thaltej            | Public Profile   |
+| 950 | The Mad House Café             | Café                    | Gulbai Tekra       | Public Profile   |
+| 951 | Leafy Lion                     | Café                    | Navrangpura        | Public Profile   |
+| 952 | Crush Coffee                   | Coffee Café             | CG Road            | +91 83206 12851  |
+| 953 | Four Coffee                    | Café                    | CG Road            | Public Profile   |
+| 954 | Ame Cafe & Patisserie          | Café                    | Bodakdev           | Public Profile   |
+| 955 | Ray Cafe                       | Café                    | Panjrapol          | Public Profile   |
+| 956 | Mocha Bodakdev                 | Café                    | Bodakdev           | +91 97252 00002  |
+| 957 | Big Scoop Cafe                 | Café                    | CG Road            | +91 97274 57314  |
+| 958 | Karma Cafe                     | Café                    | Ashram Road        | +91 79 2754 0635 |
+| 959 | Cafe De Italiano               | Café                    | Sindhu Bhavan Road | +91 93280 78019  |
+| 960 | The Dark Roast                 | Coffee Café             | SG Highway         | +91 79 4892 3777 |
+|   # | Business                                                             | Category                | Area       | Phone           |
+| --: | -------------------------------------------------------------------- | ----------------------- | ---------- | --------------- |
+| 961 | Klatsch Mate                                                         | European Café           | Chandkheda | +91 97266 61567 |
+| 962 | Foo Palladium Ahmedabad                                              | Asian Restaurant        | Thaltej    | +91 79842 64651 |
+| 963 | Happysoftykulfi                                                      | Dessert Café            | Thaltej    | Public Profile  |
+| 964 | Thebingeplate                                                        | Restaurant              | Thaltej    | Public Profile  |
+| 965 | Sankalp Restaurant - Authentic South Indian Restaurants in Ahmedabad | South Indian Restaurant | SG Highway | +91 97277 22235 |
+| 966 | Brewgarten                                                           | Café                    | Bodakdev   | Public Profile  |
+| 967 | Cafe Baba Budan                                                      | Café                    | Ahmedabad  | Public Profile  |
+| 968 | Core The Coffee Shop                                                 | Coffee Shop             | Ahmedabad  | Public Profile  |
+| 969 | Nothing Before Coffee                                                | Café                    | Ahmedabad  | Public Profile  |
+| 970 | Koffee Stories                                                       | Café                    | Vastrapur  | Public Profile  |
+| 971 | Shoonya Café                                                         | Café                    | Ahmedabad  | Public Profile  |
+| 972 | Café Venture Studio                                                  | Work Café               | Ahmedabad  | Public Profile  |
+| 973 | Coffee ByUs                                                          | Coffee Shop             | Ahmedabad  | Public Profile  |
+| 974 | Cafe Nook                                                            | Café                    | Ahmedabad  | Public Profile  |
+| 975 | SandwichworkZ Café                                                   | Café                    | Ahmedabad  | Public Profile  |
+| 976 | Veranda Rooftop Restro Cafe                                          | Rooftop Café            | Shilaj     | Public Profile  |
+| 977 | Chelvies Cafe                                                        | Café                    | Ahmedabad  | Public Profile  |
+| 978 | Scoby's Cafe                                                         | Café                    | Ahmedabad  | Public Profile  |
+| 979 | Ukiyo Café                                                           | Café                    | Ahmedabad  | Public Profile  |
+| 980 | Gulabo & Co                                                          | Café                    | Ahmedabad  | Public Profile  |
+|   # | Business                   | Category                | Area        | Phone            |
+| --: | -------------------------- | ----------------------- | ----------- | ---------------- |
+| 961 | Baked Bliss Bakery & Cafes | Bakery & Café           | Gota        | Public Listing   |
+| 962 | One Bite Ahmedabad Gujarat | Fast Food Restaurant    | Gota        | +91 79 4039 3059 |
+| 963 | Smoochys                   | Café & Restaurant       | Khanpur     | +91 95107 33743  |
+| 964 | Aamchur                    | North Indian Restaurant | Panjrapole  | Public Listing   |
+| 965 | FOO Asian Tapas            | Asian Restaurant        | Thaltej     | Public Contact   |
+| 966 | Chili's Grill & Bar        | Casual Dining           | Vastrapur   | Public Contact   |
+| 967 | Mrs Mage                   | Café                    | Vastrapur   | Public Contact   |
+| 968 | Cafe 1st Story             | Café                    | Ashram Road | Public Contact   |
+| 969 | Bento B                    | Japanese Restaurant     | Ahmedabad   | Public Contact   |
+| 970 | Bawa Bistro                | Parsi Restaurant        | Ahmedabad   | Public Contact   |
+|    # | Business            | Category                | Area               | Phone            |
+| ---: | ------------------- | ----------------------- | ------------------ | ---------------- |
+|  981 | Cafe 1st Story      | Café                    | Ashram Road        | Public Profile   |
+|  982 | Emperor Lounge      | Café                    | Usmanpura          | +91 79 6160 6160 |
+|  983 | Java+               | Café                    | Prahlad Nagar      | +91 79 4601 1111 |
+|  984 | Mill & Co.          | Coffee Café             | Navrangpura        | Public Profile   |
+|  985 | Pink Palette        | Café                    | Bodakdev           | Public Profile   |
+|  986 | Little French House | Café & Bakery           | Bodakdev           | Public Profile   |
+|  987 | Arton Cafe          | Café                    | Sindhu Bhavan Road | Public Profile   |
+|  988 | Barnyard Eatery     | Restaurant              | Thaltej            | Public Profile   |
+|  989 | Muse Cafe           | Café                    | Ahmedabad          | Public Profile   |
+|  990 | Theobroma           | Bakery Café             | Bodakdev           | +91 81828 18881  |
+|  991 | Rasa Restro Cafe    | Restaurant              | Ahmedabad          | Public Profile   |
+|  992 | Chinese Wok         | Restaurant              | SG Highway         | Public Profile   |
+|  993 | Mirch Masala        | Restaurant              | Navrangpura        | +91 79 2646 0000 |
+|  994 | Nini's Kitchen      | Restaurant              | Vastrapur          | Public Profile   |
+|  995 | Sankalp Restaurant  | South Indian Restaurant | Drive-In Road      | +91 79 2749 9999 |
+|  996 | Anakut Restaurant   | Gujarati Restaurant     | CG Road            | Public Profile   |
+|  997 | Box Park Cafe       | Café                    | Sindhu Bhavan Road | Public Profile   |
+|  998 | The Neem Tree       | Restaurant              | Iscon–Ambli Road   | Public Profile   |
+|  999 | Kurry Karamat       | Restaurant              | Chandkheda         | Public Profile   |
+| 1000 | Sukhi Restaurant    | Restaurant              | Iscon–Ambli Road   | Public Profile   |
+|    # | Business                                            | Category                     | City      | Phone            |
+| ---: | --------------------------------------------------- | ---------------------------- | --------- | ---------------- |
+| 1001 | Noble Builders                                      | Builder                      | Junagadh  | +91 285 265 7500 |
+| 1002 | Classic Interior Designers                          | Interior Designer            | Ahmedabad | +91 95740 95799  |
+| 1003 | Kush Architects and Interior Designers              | Architect & Interior         | Ahmedabad | +91 98791 59408  |
+| 1004 | Shivam Motor Body Builders                          | Manufacturer                 | Ahmedabad | +91 90330 33102  |
+| 1005 | Knits Pancholi Manufacturers                        | Garment Manufacturer         | Ahmedabad | +91 98250 73564  |
+| 1006 | Heritage Hotels Gujarat                             | Hotel                        | Ahmedabad | Public Contact   |
+| 1007 | Baked Bliss Bakery & Cafes                          | Bakery & Café                | Ahmedabad | Public Contact   |
+| 1008 | Ashapura Proteins Ltd.                              | Manufacturer                 | Ahmedabad | Public Directory |
+| 1009 | Akhandbharat Mill Gin Stores                        | Hardware                     | Ahmedabad | Public Directory |
+| 1010 | Agarwal TMT Industries Pvt. Ltd.                    | Steel Manufacturer           | Ahmedabad | Public Directory |
+| 1011 | Mediwin Pharmaceuticals                             | Pharmaceutical               | Ahmedabad | Public Directory |
+| 1012 | Antila Lifesciences Pvt. Ltd.                       | Pharmaceutical               | Ahmedabad | Public Directory |
+| 1013 | P D Polygrinders Pvt. Ltd.                          | Construction Material        | Ahmedabad | Public Directory |
+| 1014 | Gujarat Narmada Valley Fertilizers & Chemicals Ltd. | Chemical Manufacturer        | Bharuch   | Public Directory |
+| 1015 | Jewel Packaging Pvt. Ltd.                           | Packaging                    | Ahmedabad | Public Directory |
+| 1016 | Bhagwati Enviro Care Pvt. Ltd.                      | Environmental Services       | Ahmedabad | Public Directory |
+| 1017 | Mansi Chemicals                                     | Chemical Manufacturer        | Ahmedabad | Public Directory |
+| 1018 | Jay Life Care Pvt. Ltd.                             | Healthcare                   | Ahmedabad | Public Directory |
+| 1019 | Faith PEB                                           | Industrial Shed Manufacturer | Ahmedabad | Public Directory |
+| 1020 | Narayan M. Chandra – Ashapura Proteins              | Food Manufacturer            | Ahmedabad | Public Directory |
+|    # | Business                                  | Category                        | City      | Phone            |
+| ---: | ----------------------------------------- | ------------------------------- | --------- | ---------------- |
+| 1021 | Noble Builders                            | Builder                         | Junagadh  | +91 285 265 7500 |
+| 1022 | Classic Interior Designers                | Interior Designer               | Ahmedabad | +91 95740 95799  |
+| 1023 | Designers Collaborative                   | Architect & Interior            | Ahmedabad | +91 98240 59327  |
+| 1024 | Relevarch Interior Designers              | Interior Designer               | Surat     | +91 98253 62139  |
+| 1025 | Shivam Motor Body Builders                | Manufacturer                    | Ahmedabad | +91 90330 33102  |
+| 1026 | REDSAIL Sanitaryware                      | Ceramic Manufacturer            | Thangadh  | +91 74878 08998  |
+| 1027 | Patel Scientific Instruments Pvt. Ltd.    | Hospital Equipment Manufacturer | Ahmedabad | +91 79 2273 0759 |
+| 1028 | Harsiddh Engineering Company              | Pharma Machinery                | Ahmedabad | +91 79 2929 2119 |
+| 1029 | Creativeedge                              | Architects & Interior Designers | Ahmedabad | +91 99091 51414  |
+| 1030 | Ahmedabad Interior Designer               | Interior Designer               | Ahmedabad | +91 85119 78199  |
+| 1031 | Perfect Engg. & Allied Works Pvt. Ltd.    | Engineering                     | Vadodara  | +91 265 264 5786 |
+| 1032 | Shilp Associates                          | Civil Engineer & Interior       | Bhuj      | +91 99825 589669 |
+| 1033 | Centre For Sight Group of Eye Hospitals   | Eye Hospital                    | Vadodara  | +91 80 6542 3838 |
+| 1034 | Curis Hospitals Regional Office - Gujarat | Healthcare                      | Ahmedabad | Public Contact   |
+| 1035 | Bhagwati Enviro Care Pvt. Ltd.            | Environmental Services          | Ahmedabad | Public Directory |
+| 1036 | Mansi Chemicals                           | Chemical Manufacturer           | Ahmedabad | Public Directory |
+| 1037 | Jay Life Care Pvt. Ltd.                   | Healthcare                      | Ahmedabad | Public Directory |
+| 1038 | Ashapura Proteins Ltd.                    | Food Manufacturer               | Ahmedabad | Public Directory |
+| 1039 | Akhandbharat Mill Gin Stores              | Hardware                        | Ahmedabad | Public Directory |
+| 1040 | Agarwal TMT Industries Pvt. Ltd.          | Steel Manufacturer              | Ahmedabad | Public Directory |
+|    # | Business                                                 | Category               | City          | Phone            |
+| ---: | -------------------------------------------------------- | ---------------------- | ------------- | ---------------- |
+| 1041 | Designers Collaborative :Architects & Interior Designers | Architect & Interior   | Ahmedabad     | +91 98240 59327  |
+| 1042 | Gujarat Raffia Industries Limited                        | Manufacturer           | Kalol         | +91 72290 95778  |
+| 1043 | Om Products                                              | Housekeeping Products  | Ahmedabad     | +91 97732 14548  |
+| 1044 | Saurav Builders                                          | Construction Company   | Vadodara      | Public Profile   |
+| 1045 | Spaceart Interior                                        | Interior Designer      | Ahmedabad     | +91 75672 87925  |
+| 1046 | Sadguru Interior                                         | Interior Designer      | Ahmedabad     | +91 99255 41242  |
+| 1047 | Studio DNA                                               | Interior Designer      | Ahmedabad     | +91 98603 41523  |
+| 1048 | A Square Designer                                        | Interior Designer      | Ahmedabad     | +91 73839 36489  |
+| 1049 | Pitrukrupa Wooden Works                                  | Interior & Wood Works  | Ahmedabad     | +91 98989 22922  |
+| 1050 | Globentis International Pvt. Ltd.                        | Interior Products      | Ahmedabad     | +91 96876 69377  |
+| 1051 | Sundek India Ltd.                                        | Interior Products      | Surat         | +91 99099 29151  |
+| 1052 | Tarunkumar Panchal                                       | Civil Engineer         | Vadodara      | +91 99041 22458  |
+| 1053 | Anslive Interior                                         | Interior Designer      | Vadodara      | +91 99988 16194  |
+| 1054 | Priyanka Infra Pvt. Ltd.                                 | Infrastructure         | Vadodara      | +91 265 2323224  |
+| 1055 | Jinendra Apprise India Pvt. Ltd.                         | Interior & Furniture   | Vadodara      | +91 265 2259522  |
+| 1056 | Rachaita Creative Solutions                              | Interior & Fabrication | Vadodara      | +91 265 2647986  |
+| 1057 | Moham Sons                                               | Interior Decor         | Rajkot        | +91 281 6545152  |
+| 1058 | G.M. Mistry Furnishers Pvt. Ltd.                         | Furniture Manufacturer | Anand         | +91 2692 229229  |
+| 1059 | Shiv Interiors                                           | Interior Products      | Amreli        | +91 98228 28992  |
+| 1060 | Kundan Shilp                                             | Interior & Stone Work  | Surendranagar | +91 99825 252892 |
+|    # | Business                               | Category                  | City      | Phone            |
+| ---: | -------------------------------------- | ------------------------- | --------- | ---------------- |
+| 1061 | Aakruti Interior Designers             | Interior Designer         | Ahmedabad | +91 98243 39666  |
+| 1062 | Relevarch Interior Designers           | Interior Designer         | Surat     | +91 98253 62139  |
+| 1063 | Himanshu Raval Architects              | Architect                 | Ahmedabad | +91 79 2324 6439 |
+| 1064 | Aura Design & Projects Pvt. Ltd.       | Interior Designer         | Ahmedabad | +91 98250 24320  |
+| 1065 | Om Interior                            | Interior Designer         | Vadodara  | +91 76006 06102  |
+| 1066 | Nakshatra Trades                       | Interior Products         | Surat     | +91 98980 96063  |
+| 1067 | REDSAIL Sanitaryware                   | Ceramic Manufacturer      | Thangadh  | +91 74878 08998  |
+| 1068 | Gujarat Raffia Industries Ltd.         | Plastic Manufacturer      | Kalol     | +91 72290 95778  |
+| 1069 | Safax Energy Pvt. Ltd.                 | Manufacturer & Exporter   | Ahmedabad | Public Directory |
+| 1070 | Kajal Textile Mills Pvt. Ltd.          | Textile Manufacturer      | Ahmedabad | Public Directory |
+| 1071 | Bharatbhai Rasiklal Modi               | Builder                   | Ahmedabad | Public Directory |
+| 1072 | Ravi Products                          | Industrial Manufacturer   | Morbi     | Public Directory |
+| 1073 | Koncept Interior                       | Interior Designer         | Morbi     | Public Directory |
+| 1074 | Vedant Consultancy                     | Consultancy               | Morbi     | Public Directory |
+| 1075 | Wiebee Digital                         | IT Services               | Morbi     | Public Directory |
+| 1076 | Patel Scientific Instruments Pvt. Ltd. | Scientific Instruments    | Ahmedabad | +91 79 2273 0759 |
+| 1077 | Harsiddh Engineering Co.               | Pharma Machinery          | Ahmedabad | +91 79 2929 2119 |
+| 1078 | Perfect Engg. & Allied Works Pvt. Ltd. | Engineering               | Vadodara  | +91 265 264 5786 |
+| 1079 | Shilp Associates                       | Civil Engineer & Interior | Bhuj      | +91 99825 589669 |
+| 1080 | Ahmedabad Interior Designer            | Interior Designer         | Ahmedabad | +91 85119 78199  |
+|    # | Business                               | Category                  | City        | Phone            |
+| ---: | -------------------------------------- | ------------------------- | ----------- | ---------------- |
+| 1081 | Gujarat Raffia Industries Limited      | Manufacturer              | Kalol       | +91 72290 95778  |
+| 1082 | Om Products                            | Housekeeping Products     | Ahmedabad   | +91 97732 14548  |
+| 1083 | Kush Architects and Interior Designers | Architect & Interior      | Ahmedabad   | +91 98791 59408  |
+| 1084 | Classic Interior Designers             | Interior Designer         | Ahmedabad   | +91 95740 95799  |
+| 1085 | Knits Pancholi Manufacturers           | Garment Manufacturer      | Ahmedabad   | +91 98250 73564  |
+| 1086 | Shivam Motor Body Builders             | Vehicle Body Manufacturer | Ahmedabad   | +91 90330 33102  |
+| 1087 | Noble Builders                         | Builder                   | Junagadh    | +91 285 265 7500 |
+| 1088 | Aashka Hospitals                       | Hospital                  | Gandhinagar | Public Contact   |
+| 1089 | Sterling Hospitals                     | Hospital                  | Vadodara    | Public Contact   |
+| 1090 | Shreeji Hospital                       | Hospital                  | Rajkot      | Public Contact   |
+| 1091 | Patel Dental Clinic                    | Dental Clinic             | Mehsana     | Public Contact   |
+| 1092 | Shree Krishna Hospital                 | Hospital                  | Anand       | Public Contact   |
+| 1093 | Vision Eye Hospital                    | Eye Hospital              | Surat       | Public Contact   |
+| 1094 | Omkar Furniture                        | Furniture Manufacturer    | Rajkot      | Public Contact   |
+| 1095 | Shree Ram Ceramic                      | Ceramic Manufacturer      | Morbi       | Public Contact   |
+| 1096 | Nilkanth Packaging                     | Packaging Manufacturer    | Vapi        | Public Contact   |
+| 1097 | Maruti Steel Furniture                 | Steel Furniture           | Bhavnagar   | Public Contact   |
+| 1098 | Shakti Engineering Works               | Engineering               | Jamnagar    | Public Contact   |
+| 1099 | Patel Agro Industries                  | Agro Products             | Mehsana     | Public Contact   |
+| 1100 | Shree Hari Developers                  | Builder                   | Surat       | Public Contact   |
+|    # | Business                                  | Category                  | City      | Phone            |
+| ---: | ----------------------------------------- | ------------------------- | --------- | ---------------- |
+| 1101 | Om Products                               | Housekeeping Products     | Ahmedabad | +91 97732 14548  |
+| 1102 | Gujarat Raffia Industries Limited         | PE Tarpaulin Manufacturer | Kalol     | +91 72290 95778  |
+| 1103 | Kush Architects and Interior Designers    | Architect & Interior      | Ahmedabad | +91 98791 59408  |
+| 1104 | Classic Interior Designers                | Interior Designer         | Ahmedabad | +91 95740 95799  |
+| 1105 | Knits Pancholi Manufacturers              | Garment Manufacturer      | Ahmedabad | +91 98250 73564  |
+| 1106 | Shivam Motor Body Builders                | Vehicle Body Builder      | Ahmedabad | +91 90330 33102  |
+| 1107 | Noble Builders                            | Builder                   | Junagadh  | +91 285 265 7500 |
+| 1108 | Curis Hospitals Regional Office - Gujarat | Healthcare                | Ahmedabad | Public Contact   |
+| 1109 | Maruti Ceramics                           | Ceramic Manufacturer      | Morbi     | Public Directory |
+| 1110 | Shree Ganesh Tiles                        | Tile Manufacturer         | Morbi     | Public Directory |
+| 1111 | Jay Khodiyar Industries                   | Engineering               | Rajkot    | Public Directory |
+| 1112 | Vinayak Packaging                         | Packaging                 | Vapi      | Public Directory |
+| 1113 | Shree Balaji Plastics                     | Plastic Manufacturer      | Surat     | Public Directory |
+| 1114 | Om Steel Furniture                        | Furniture Manufacturer    | Rajkot    | Public Directory |
+| 1115 | Shree Hari Engineers                      | Engineering               | Vadodara  | Public Directory |
+| 1116 | Patel Agro Industries                     | Agro Products             | Mehsana   | Public Directory |
+| 1117 | Shreeji Industries                        | Industrial Manufacturer   | Bhavnagar | Public Directory |
+| 1118 | Krishna Fabrication Works                 | Fabrication               | Jamnagar  | Public Directory |
+| 1119 | Shiv Shakti Developers                    | Builder                   | Surat     | Public Directory |
+| 1120 | Shree Ram Hospital                        | Hospital                  | Bharuch   | Public Directory |
+|    # | Business                                                  | Category                  | City      | Phone           |
+| ---: | --------------------------------------------------------- | ------------------------- | --------- | --------------- |
+| 1121 | Designers Collaborative : Architects & Interior Designers | Architect & Interior      | Ahmedabad | +91 98240 59327 |
+| 1122 | Classic Interior Designers                                | Interior Designer         | Ahmedabad | +91 95740 95799 |
+| 1123 | Relevarch Interior Designers                              | Interior Designer         | Surat     | +91 98253 62139 |
+| 1124 | TAABIIR INTERIOR                                          | Interior Designer         | Jamnagar  | +91 82009 32775 |
+| 1125 | ELITE INTERIORS STUDIO                                    | Interior Designer         | Vadodara  | +91 88492 18534 |
+| 1126 | ARCHITECTS NOOK                                           | Architect & Interior      | Valsad    | 0260 2431770    |
+| 1127 | WOOD WALE INTERIOR PVT. LTD.                              | Interior Designer         | Vadodara  | +91 95108 80746 |
+| 1128 | EMPIRICAL CONSULTING SERVICES                             | Architect & Interior      | Ahmedabad | +91 88661 14513 |
+| 1129 | Shivam Motor Body Builders Ahmadabad Gujarat              | Vehicle Body Manufacturer | Ahmedabad | +91 90330 33102 |
+| 1130 | REDSAIL Sanitaryware                                      | Ceramic Manufacturer      | Thangadh  | +91 74878 08998 |
+|    # | Business                                                                                 | Category                  | City      | Phone            |
+| ---: | ---------------------------------------------------------------------------------------- | ------------------------- | --------- | ---------------- |
+| 1131 | Designers Collaborative : Architects & Interior Designers                                | Architect                 | Ahmedabad | +91 98240 59327  |
+| 1132 | The Burger Builders                                                                      | Fast Food Restaurant      | Ahmedabad | +91 91064 14703  |
+| 1133 | Layers Clinics                                                                           | Skin Care Clinic          | Ahmedabad | +91 99989 88282  |
+| 1134 | Acharya Clinics                                                                          | Clinic                    | Ahmedabad | +91 91049 24771  |
+| 1135 | Heritage Hotels Gujarat                                                                  | Hotel                     | Ahmedabad | Public Contact   |
+| 1136 | Gujarat Hotels Ltd                                                                       | Hospitality               | Vadodara  | +91 265 233 0033 |
+| 1137 | Knits Pancholi Manufacturers                                                             | Garment Manufacturer      | Ahmedabad | +91 98250 73564  |
+| 1138 | Shivam Motor Body Builders Ahmadabad Gujarat                                             | Vehicle Body Manufacturer | Ahmedabad | +91 90330 33102  |
+| 1139 | Gujarat Raffia Industries Limited - PE Tarpaulin Manufacturers in Gujarat India          | PE Tarpaulin Manufacturer | Kalol     | +91 72290 95778  |
+| 1140 | Om Products - Housekeeping Products Manufacturers - Suppliers In Ahmedabad,Gujarat,India | Housekeeping Products     | Ahmedabad | +91 97732 14548  |
+|    # | Business                                                  | Category                  | City      | Phone            | Source            |
+| ---: | --------------------------------------------------------- | ------------------------- | --------- | ---------------- | ----------------- |
+| 1131 | Designers Collaborative : Architects & Interior Designers | Architect & Interior      | Ahmedabad | +91 98240 59327  | Google Maps       |
+| 1132 | Classic Interior Designers                                | Interior Designer         | Ahmedabad | +91 95740 95799  | Google Maps       |
+| 1133 | Relevarch Interior Designers                              | Interior Designer         | Surat     | +91 98253 62139  | Google Maps       |
+| 1134 | Shivam Motor Body Builders                                | Vehicle Body Manufacturer | Ahmedabad | +91 90330 33102  | Google Maps       |
+| 1135 | REDSAIL Sanitaryware                                      | Ceramic Manufacturer      | Thangadh  | +91 74878 08998  | Google Maps       |
+| 1136 | Gujarat Agarbatti Manufacturers & Dealers Association     | Manufacturer              | Ahmedabad | +91 87359 02190  | Google Maps       |
+| 1137 | The Gujarat Garments Manufacturers Association            | Garment Association       | Ahmedabad | +91 79 2562 0792 | Google Maps       |
+| 1138 | TAABIIR INTERIOR                                          | Interior Designer         | Jamnagar  | +91 82009 32775  | Gujarat Directory |
+| 1139 | ELITE INTERIORS STUDIO                                    | Interior Designer         | Vadodara  | +91 88492 18534  | Gujarat Directory |
+| 1140 | WOOD WALE INTERIOR PVT. LTD.                              | Interior Designer         | Vadodara  | +91 95108 80746  | Gujarat Directory |
+|    # | Business                                                  | Category                  | City      | Phone            | Source            |
+| ---: | --------------------------------------------------------- | ------------------------- | --------- | ---------------- | ----------------- |
+
+

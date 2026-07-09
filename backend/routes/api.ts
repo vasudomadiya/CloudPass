@@ -55,7 +55,7 @@ router.get("/health/auto-heal", (req, res) => {
 });
 
 // Upload Files
-router.post("/upload", upload.any(), (req, res) => {
+router.post("/upload", upload.array("files"), (req, res) => {
   try {
     const filesUploaded = req.files as Express.Multer.File[];
     if (!filesUploaded || filesUploaded.length === 0) {

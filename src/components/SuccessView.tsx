@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { CheckCircle2, Copy, Share2, MessageSquare, Send, Mail, QrCode, FileText, Database, Clock, Download, Trash2, ArrowLeft, Check } from 'lucide-react';
+import { CheckCircle2, Copy, Share2, MessageSquare, Send, Mail, FileText, Database, Clock, Download, Trash2, ArrowLeft, Check } from 'lucide-react';
 import { FileMetadata } from '../types';
 import { formatBytes, deleteFileEarly } from '../lib/api';
 
@@ -94,25 +94,22 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach((p, idx) => {
+      particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.35; // Gravity
-        p.alpha -= 0.012; // Fade out
+        p.vy += 0.35;
+        p.alpha -= 0.012;
 
         ctx.save();
-        ctx.globalAlpha = p.alpha;
+        ctx.globalAlpha = Math.max(0, p.alpha);
         ctx.fillStyle = p.color;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
-
-        // Remove dead particles
-        if (p.alpha <= 0) {
-          particles.splice(idx, 1);
-        }
       });
+
+      particles = particles.filter(p => p.alpha > 0);
 
       if (particles.length > 0) {
         animationFrameId = requestAnimationFrame(render);

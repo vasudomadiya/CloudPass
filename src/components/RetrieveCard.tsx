@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KeyRound, ShieldAlert, ArrowRight, CornerDownLeft, CircleAlert } from 'lucide-react';
+import { KeyRound, ArrowRight, CircleAlert } from 'lucide-react';
 import { fetchFileInfo } from '../lib/api';
 import { FileMetadata } from '../types';
 
