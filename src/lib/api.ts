@@ -3,15 +3,9 @@ import { FileMetadata, AdminStats, AutoHealStatus } from "../types";
 // API Base URL - use environment variable or default to current origin
 const API_BASE_URL =
   import.meta.env.VITE_API_URL ||
-  (() => {
-    if (
-      typeof window !== "undefined" &&
-      window.location.hostname === "localhost"
-    ) {
-      return "http://localhost:3000";
-    }
-    return window.location.origin;
-  })();
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "");
 
 export const getApiUrl = (endpoint: string): string => {
   return `${API_BASE_URL}${endpoint}`;

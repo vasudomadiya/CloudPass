@@ -8,10 +8,18 @@ import { cleanExpiredFiles } from "./services/fileService";
 export async function createApp() {
   const app = express();
 
-  // CORS for dev (Vite runs on 5173)
+  // CORS — allow Vercel frontend and localhost dev
+  const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    'http://localhost:5173',
+    'http://localhost:5174',
+  ].filter(Boolean);
+
   app.use((req, res, next) => {
     const origin = req.headers.origin;
-    if (origin) res.setHeader("Access-Control-Allow-Origin", origin);
+    if (origin && (allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production')) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+    }
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
     if (req.method === "OPTIONS") return res.sendStatus(204);
@@ -50,8 +58,10 @@ export async function createApp() {
     res.status(500).json({ error: err?.message || 'Internal server error.' });
   });
 
+  // Start background cleanup job every 10 seconds (only in long-running server)
+  if (process.env.NODE_ENV !== 'test') {
+    setInterval(cleanExpiredFiles, 10000);
+  }
+
   return app;
 }
-
-// Start background cleanup job every 10 seconds
-setInterval(cleanExpiredFiles, 10000);
