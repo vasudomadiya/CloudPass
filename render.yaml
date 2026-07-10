@@ -3,6 +3,7 @@ services:
     name: filepass26-backend
     env: node
     plan: free
+    root: .
     buildCommand: npm install && npm run build
     startCommand: npm run start
     envVars:

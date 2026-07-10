@@ -1,9 +1,19 @@
 import fs from "fs";
+import os from "os";
 import path from "path";
 import { FileMetadata } from "../../src/types";
 
-const DB_FILE = path.join(process.cwd(), "db.json");
-const DB_BACKUP_FILE = path.join(process.cwd(), "db.backup.json");
+const isVercel = Boolean(process.env.VERCEL || process.env.VERCEL_ENV);
+const DATA_DIR = isVercel
+  ? path.join(os.tmpdir(), "filepass26")
+  : process.cwd();
+
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+const DB_FILE = path.join(DATA_DIR, "db.json");
+const DB_BACKUP_FILE = path.join(DATA_DIR, "db.backup.json");
 
 export interface AutoHealLog {
   timestamp: string;

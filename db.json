@@ -346,7 +346,7 @@
     "downloadLimit": null,
     "downloadCount": 0,
     "createdAt": "2026-07-10T05:43:27.089Z",
-    "status": "active",
+    "status": "expired",
     "isPasswordProtected": false,
     "deleteToken": "VGCPR9HQ"
   },
@@ -449,5 +449,30 @@
     "status": "active",
     "isPasswordProtected": false,
     "deleteToken": "XGUYT9N7"
+  },
+  {
+    "id": "files-1783665962580-125032342.js",
+    "code": "577497",
+    "filename": "files-1783665962580-125032342.js",
+    "originalName": "script.js",
+    "fileType": "text/javascript",
+    "fileSize": 575,
+    "files": [
+      {
+        "id": "files-1783665962580-125032342.js",
+        "filename": "files-1783665962580-125032342.js",
+        "originalName": "script.js",
+        "fileType": "text/javascript",
+        "fileSize": 575
+      }
+    ],
+    "expiry": "2026-07-10T07:46:02.605Z",
+    "expiryDuration": "1 Hour",
+    "downloadLimit": null,
+    "downloadCount": 0,
+    "createdAt": "2026-07-10T06:46:02.618Z",
+    "status": "active",
+    "isPasswordProtected": false,
+    "deleteToken": "9NN27VRZ"
   }
 ]

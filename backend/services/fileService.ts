@@ -1,9 +1,14 @@
 import fs from "fs";
+import os from "os";
 import path from "path";
 import { FileMetadata } from "../../src/types";
 import { readDB, writeDB, autoHealLogs } from "./db";
 
-const UPLOADS_DIR = path.join(process.cwd(), "uploads");
+const UPLOADS_DIR = path.resolve(
+  process.env.VERCEL || process.env.VERCEL_ENV
+    ? path.join(os.tmpdir(), "uploads")
+    : path.join(process.cwd(), "uploads"),
+);
 
 // Ensure uploads dir exists
 if (!fs.existsSync(UPLOADS_DIR)) {
