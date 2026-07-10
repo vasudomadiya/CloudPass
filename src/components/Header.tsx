@@ -1,9 +1,9 @@
-import React from 'react';
-import { Cloud, Lock, Settings } from 'lucide-react';
+import React from "react";
+import { Cloud, Lock, Settings } from "lucide-react";
 
 interface HeaderProps {
-  onNavigate: (view: 'main' | 'admin' | 'download-input') => void;
-  currentView: string;
+  onNavigate: (view: "main" | "download-input") => void;
+  currentView: "main" | "success" | "download" | "error";
 }
 
 export default function Header({ onNavigate, currentView }: HeaderProps) {
@@ -11,9 +11,11 @@ export default function Header({ onNavigate, currentView }: HeaderProps) {
     <header className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/5">
       <nav className="flex justify-between items-center px-4 md:px-10 h-16 max-w-7xl mx-auto">
         {/* Logo and Brand */}
-        <div 
-          className="flex items-center gap-2.5 cursor-pointer hover:opacity-90 transition-opacity"
-          onClick={() => onNavigate('main')}
+        <button
+          type="button"
+          onClick={() => onNavigate("main")}
+          className="flex items-center gap-2.5 cursor-pointer hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-indigo-400 rounded-lg"
+          aria-label="Return to home"
         >
           <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-orange-400 shadow-lg shadow-indigo-500/20">
             <Cloud className="w-5 h-5 text-white" />
@@ -25,31 +27,19 @@ export default function Header({ onNavigate, currentView }: HeaderProps) {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             Auto-Heal Active
           </span>
-        </div>
+        </button>
 
         {/* Action Controls */}
         <div className="flex items-center gap-3">
-          <button 
-            onClick={() => onNavigate('admin')}
-            className={`flex items-center gap-1.5 font-sans text-xs font-semibold px-3 py-1.5 rounded-lg border transition-all duration-200 ${
-              currentView === 'admin'
-                ? 'bg-indigo-500/10 border-indigo-500/30 text-indigo-400'
-                : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            <Settings className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Admin Terminal</span>
-          </button>
-
-          <button 
-            onClick={() => onNavigate('main')}
+          <button
+            onClick={() => onNavigate("main")}
             className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 active:scale-95 ${
-              currentView === 'main'
-                ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 hover:bg-indigo-500/20'
-                : 'bg-gradient-to-r from-indigo-500 to-orange-400 text-white hover:brightness-110 shadow-md shadow-indigo-500/10'
+              currentView === "main"
+                ? "bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 hover:bg-indigo-500/20"
+                : "bg-gradient-to-r from-indigo-500 to-orange-400 text-white hover:brightness-110 shadow-md shadow-indigo-500/10"
             }`}
           >
-            {currentView === 'main' ? 'Upload Hub' : 'Share File'}
+            {currentView === "main" ? "Upload Hub" : "Share File"}
           </button>
         </div>
       </nav>

@@ -1,7 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { CheckCircle2, Copy, Share2, MessageSquare, Send, Mail, FileText, Database, Clock, Download, Trash2, ArrowLeft, Check } from 'lucide-react';
-import { FileMetadata } from '../types';
-import { formatBytes, deleteFileEarly } from '../lib/api';
+import React, { useState, useEffect, useRef } from "react";
+import {
+  CheckCircle2,
+  Copy,
+  Share2,
+  MessageSquare,
+  Send,
+  Mail,
+  FileText,
+  Database,
+  Clock,
+  Download,
+  Trash2,
+  ArrowLeft,
+  Check,
+} from "lucide-react";
+import { FileMetadata } from "../types";
+import { formatBytes, deleteFileEarly } from "../lib/api";
 
 interface SuccessViewProps {
   file: FileMetadata;
@@ -9,15 +23,19 @@ interface SuccessViewProps {
   onReset: () => void;
 }
 
-export default function SuccessView({ file, deleteToken, onReset }: SuccessViewProps) {
+export default function SuccessView({
+  file,
+  deleteToken,
+  onReset,
+}: SuccessViewProps) {
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
-  const [timeLeft, setTimeLeft] = useState('');
+  const [timeLeft, setTimeLeft] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [deleteError, setDeleteError] = useState('');
+  const [deleteError, setDeleteError] = useState("");
   const [deleteSuccess, setDeleteSuccess] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
-  
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Direct download link computation
@@ -28,23 +46,25 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
     const updateTimer = () => {
       const diff = +new Date(file.expiry) - +new Date();
       if (diff <= 0) {
-        setTimeLeft('Expired');
+        setTimeLeft("Expired");
         return;
       }
-      
+
       const secs = Math.floor((diff / 1000) % 60);
       const mins = Math.floor((diff / 1000 / 60) % 60);
       const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      
-      const formatted = [
-        days > 0 ? `${days}d ` : '',
-        String(hrs).padStart(2, '0'),
-        String(mins).padStart(2, '0'),
-        String(secs).padStart(2, '0')
-      ].filter(Boolean).join(':');
 
-      setTimeLeft(formatted.replace('d :', 'd '));
+      const formatted = [
+        days > 0 ? `${days}d ` : "",
+        String(hrs).padStart(2, "0"),
+        String(mins).padStart(2, "0"),
+        String(secs).padStart(2, "0"),
+      ]
+        .filter(Boolean)
+        .join(":");
+
+      setTimeLeft(formatted.replace("d :", "d "));
     };
 
     updateTimer();
@@ -56,7 +76,7 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -70,7 +90,7 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
       alpha: number;
     }> = [];
 
-    const colors = ['#6366f1', '#fb923c', '#3b82f6', '#818cf8', '#ffffff'];
+    const colors = ["#6366f1", "#fb923c", "#3b82f6", "#818cf8", "#ffffff"];
 
     // Resize canvas
     canvas.width = window.innerWidth;
@@ -87,7 +107,7 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
         size: Math.random() * 6 + 4,
         vx: Math.cos(angle) * velocity,
         vy: Math.sin(angle) * velocity - 3, // slightly upward gravity drift
-        alpha: 1
+        alpha: 1,
       });
     }
 
@@ -109,7 +129,7 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
         ctx.restore();
       });
 
-      particles = particles.filter(p => p.alpha > 0);
+      particles = particles.filter((p) => p.alpha > 0);
 
       if (particles.length > 0) {
         animationFrameId = requestAnimationFrame(render);
@@ -143,13 +163,13 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
     }
 
     setIsDeleting(true);
-    setDeleteError('');
+    setDeleteError("");
 
     try {
       await deleteFileEarly(file.code, deleteToken);
       setDeleteSuccess(true);
     } catch (err: any) {
-      setDeleteError(err.message || 'Failed to delete file.');
+      setDeleteError(err.message || "Failed to delete file.");
       setIsDeleting(false);
       setConfirmDelete(false);
     }
@@ -158,15 +178,18 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 relative z-10">
       {/* Background canvas for celebration */}
-      <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-50" />
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 pointer-events-none z-50"
+      />
 
       {/* Back button */}
-      <button 
+      <button
         onClick={onReset}
         className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white mb-6 cursor-pointer"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
-        BACK_TO_TERMINAL
+        BACK_TO_HOME
       </button>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -179,20 +202,28 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
                 File Successfully Encrypted
               </span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Your link is ready.</h1>
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+              Your link is ready.
+            </h1>
             <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-              Share this temporary download code or direct secure URL. All file blocks will self-destruct once the countdown timer below hits zero.
+              Share this temporary download code or direct secure URL. All file
+              blocks will self-destruct once the countdown timer below hits
+              zero.
             </p>
           </div>
 
           {/* Access Code Bento Card */}
           <div className="surface-glass border-glass rounded-[32px] p-6 relative overflow-hidden group">
             <div className="absolute -right-20 -top-20 w-64 h-64 bg-indigo-500/5 blur-[80px] rounded-full group-hover:bg-indigo-500/10 transition-all duration-700"></div>
-            
+
             <div className="relative z-10 flex flex-col gap-6">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-slate-400 uppercase tracking-widest">TEMP ACCESS CODE</span>
-                <span className="font-mono text-xs text-orange-400 animate-pulse">● LIVE NOW</span>
+                <span className="font-mono text-xs text-slate-400 uppercase tracking-widest">
+                  TEMP ACCESS CODE
+                </span>
+                <span className="font-mono text-xs text-orange-400 animate-pulse">
+                  ● LIVE NOW
+                </span>
               </div>
 
               <div className="flex items-center justify-center py-6">
@@ -276,20 +307,24 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
           {/* QR Code generator */}
           <div className="surface-glass border-glass rounded-2xl p-6 flex flex-col items-center gap-4 text-center">
             <div className="w-full aspect-square max-w-[200px] bg-white rounded-xl p-3 flex items-center justify-center relative overflow-hidden border border-white/5">
-              <img 
+              <img
                 src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=0c0c0e&data=${encodeURIComponent(directLink)}`}
                 alt="CloudPass QR Code Share Link"
                 className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <p className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Scan to download on mobile</p>
+            <p className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">
+              Scan to download on mobile
+            </p>
           </div>
 
           {/* Metadata Specs card */}
           <div className="surface-glass border-glass rounded-[32px] overflow-hidden">
             <div className="px-5 py-3 border-b border-white/5 bg-white/2">
-              <span className="font-mono text-[10px] text-indigo-400 uppercase tracking-widest font-bold">TRANSIENT_FILE_METADATA</span>
+              <span className="font-mono text-[10px] text-indigo-400 uppercase tracking-widest font-bold">
+                TRANSIENT_FILE_METADATA
+              </span>
             </div>
 
             <div className="p-5 flex flex-col gap-4">
@@ -299,7 +334,10 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
                   <FileText className="w-4 h-4 text-indigo-400" />
                   Filename
                 </span>
-                <span className="text-white text-xs font-semibold font-sans truncate max-w-[180px]" title={file.originalName}>
+                <span
+                  className="text-white text-xs font-semibold font-sans truncate max-w-[180px]"
+                  title={file.originalName}
+                >
                   {file.originalName}
                 </span>
               </div>
@@ -322,7 +360,7 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
                   Expiry Countdown
                 </span>
                 <span className="text-orange-400 text-xs font-mono font-bold tracking-wider">
-                  {timeLeft || 'Calculating...'}
+                  {timeLeft || "Calculating..."}
                 </span>
               </div>
 
@@ -333,7 +371,9 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
                   Downloads Allowed
                 </span>
                 <span className="text-white text-xs font-sans font-semibold">
-                  {file.downloadLimit === null ? 'Unlimited' : `${file.downloadLimit} Remaining`}
+                  {file.downloadLimit === null
+                    ? "Unlimited"
+                    : `${file.downloadLimit} Remaining`}
                 </span>
               </div>
             </div>
@@ -350,28 +390,30 @@ export default function SuccessView({ file, deleteToken, onReset }: SuccessViewP
                     onClick={handleDeleteEarly}
                     disabled={isDeleting}
                     className={`w-full py-3 rounded-xl border text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-50 ${
-                      confirmDelete 
-                        ? 'bg-red-500 border-red-500 text-white animate-pulse shadow-lg shadow-red-500/20' 
-                        : 'border-[#ffb4ab]/20 text-[#ffb4ab] hover:bg-[#ffb4ab] hover:text-[#690005]'
+                      confirmDelete
+                        ? "bg-red-500 border-red-500 text-white animate-pulse shadow-lg shadow-red-500/20"
+                        : "border-[#ffb4ab]/20 text-[#ffb4ab] hover:bg-[#ffb4ab] hover:text-[#690005]"
                     }`}
                   >
                     <Trash2 className="w-4 h-4 group-hover:scale-105 transition-transform" />
-                    {isDeleting 
-                      ? 'SCRUBBING FILES...' 
-                      : confirmDelete 
-                        ? 'CONFIRM PERMANENT WIPEOUT!' 
-                        : 'DELETE EARLY'}
+                    {isDeleting
+                      ? "SCRUBBING FILES..."
+                      : confirmDelete
+                        ? "CONFIRM PERMANENT WIPEOUT!"
+                        : "DELETE EARLY"}
                   </button>
                   <p className="text-center font-mono text-[9px] text-slate-500 mt-2">
-                    {confirmDelete 
-                      ? 'Click again within 5s to securely shred all blocks.' 
-                      : 'Caution: This bypasses timers and deletes the file forever.'}
+                    {confirmDelete
+                      ? "Click again within 5s to securely shred all blocks."
+                      : "Caution: This bypasses timers and deletes the file forever."}
                   </p>
                 </>
               )}
 
               {deleteError && (
-                <p className="text-center font-mono text-xs text-[#ffb4ab] mt-2">{deleteError}</p>
+                <p className="text-center font-mono text-xs text-[#ffb4ab] mt-2">
+                  {deleteError}
+                </p>
               )}
             </div>
           </div>

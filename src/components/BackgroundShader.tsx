@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 export default function BackgroundShader() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -6,6 +6,10 @@ export default function BackgroundShader() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Sync WebGL size with layout
     const syncSize = () => {
@@ -17,10 +21,11 @@ export default function BackgroundShader() {
       }
     };
 
-    window.addEventListener('resize', syncSize);
+    window.addEventListener("resize", syncSize);
     syncSize();
 
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    const gl =
+      canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
     if (!gl) return;
 
     const vs = `
@@ -89,14 +94,18 @@ export default function BackgroundShader() {
 
     const buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    gl.bufferData(
+      gl.ARRAY_BUFFER,
+      new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]),
+      gl.STATIC_DRAW,
+    );
 
-    const posAttr = gl.getAttribLocation(program, 'a_position');
+    const posAttr = gl.getAttribLocation(program, "a_position");
     gl.enableVertexAttribArray(posAttr);
     gl.vertexAttribPointer(posAttr, 2, gl.FLOAT, false, 0, 0);
 
-    const uTime = gl.getUniformLocation(program, 'u_time');
-    const uRes = gl.getUniformLocation(program, 'u_resolution');
+    const uTime = gl.getUniformLocation(program, "u_time");
+    const uRes = gl.getUniformLocation(program, "u_resolution");
 
     let animationFrameId: number;
     const render = (t: number) => {
@@ -105,14 +114,29 @@ export default function BackgroundShader() {
       if (uTime) gl.uniform1f(uTime, t * 0.001);
       if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      animationFrameId = requestAnimationFrame(render);
+      if (!prefersReducedMotion) {
+        animationFrameId = requestAnimationFrame(render);
+      }
     };
 
     render(0);
 
+    if (prefersReducedMotion) {
+      const interval = window.setInterval(
+        () => render(performance.now()),
+        1000,
+      );
+      return () => {
+        window.removeEventListener("resize", syncSize);
+        window.clearInterval(interval);
+      };
+    }
+
     return () => {
-      window.removeEventListener('resize', syncSize);
-      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("resize", syncSize);
+      if (!prefersReducedMotion) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 
