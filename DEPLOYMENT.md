@@ -5,6 +5,16 @@
 - **Frontend:** Vercel (filepass26.vercel.app)
 - **Backend:** Render (render.com)
 
+## Deployment Architecture
+
+- **Frontend:** Vercel
+- **Backend and file storage:** Render
+- **API URL:** `https://filepass26-backend.onrender.com`
+
+The frontend must use the Render API URL in production. Set `VITE_API_URL` in
+Vercel before deploying, or keep the value in `vercel.json` if the Render
+service keeps this exact hostname.
+
 ## Step 1: Deploy Backend to Render
 
 ### 1.1 Create Render Account
@@ -34,6 +44,8 @@ Click **"Advanced"** → **"Add Environment Variable"**:
 
 - **Key:** `NODE_ENV`
 - **Value:** `production`
+- **Key:** `VITE_API_URL`
+- **Value:** `https://filepass26-backend.onrender.com`
 
 ### 1.5 Deploy
 
@@ -45,13 +57,17 @@ Click **"Create Web Service"** and wait for deployment (2-5 minutes)
 
 ## Step 2: Deploy Frontend to Vercel
 
-### 2.1 Update Environment
+### 2.1 Configure Environment Variables
 
-Create `.env.production` in your project:
+In the Vercel project settings, add this variable for **Production** and
+**Preview** environments:
 
 ```env
 VITE_API_URL=https://filepass26-backend.onrender.com
 ```
+
+`vercel.json` also contains this value for deployments that use the default
+service hostname.
 
 ### 2.2 Deploy to Vercel
 
@@ -98,21 +114,20 @@ Visit: `https://filepass26.vercel.app`
 ## 🔗 Important Notes
 
 1. **File Persistence:**
-   - Render's free tier resets files every 15 minutes
-   - For production, upgrade to **Render Pro** ($7/month) for persistent storage
-   - OR use external storage (AWS S3, etc.)
+   - Render's local filesystem is ephemeral across redeploys and service restarts
+   - Use a persistent disk or external object storage such as S3 for production
+   - Do not use the Vercel API route for uploads; serverless request and filesystem limits apply
 
 2. **Sleep Mode:**
    - Free services spin down after 15 mins of inactivity
    - Add "Keep Alive" service: [koyeb.com](https://koyeb.com) or cron job
 
 3. **Database:**
-   - Current: JSON file (db.json)
-   - For production: Use MongoDB Atlas (free tier available)
+   - Current: JSON file (`db.json`)
+   - For production: Use MongoDB Atlas or another persistent database
 
 4. **Upload Limits:**
-   - Render: 100MB per request (configurable)
-   - Current app: 5GB limit
+   - The application is configured for up to 5GB, but the hosting proxy and plan may impose lower limits
    - Consider cloud storage (S3) for large files
 
 ---

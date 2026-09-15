@@ -3,15 +3,23 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
-class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
+class ErrorBoundary extends Component<
+  { children: ReactNode },
+  { error: Error | null }
+> {
+  declare props: { children: ReactNode };
   state = { error: null };
-  static getDerivedStateFromError(error: Error) { return { error }; }
+  static getDerivedStateFromError(error: Error) {
+    return { error };
+  }
   render() {
     if (this.state.error) {
       return (
         <div className="min-h-screen bg-[#060608] text-white flex items-center justify-center p-8">
           <div className="max-w-lg w-full bg-[#93000a]/10 border border-[#93000a]/30 rounded-2xl p-8 space-y-4 text-center">
-            <h1 className="text-xl font-bold text-[#ffb4ab]">Something went wrong</h1>
+            <h1 className="text-xl font-bold text-[#ffb4ab]">
+              Something went wrong
+            </h1>
             <p className="text-sm text-slate-400 font-mono break-all">
               {(this.state.error as Error).message}
             </p>
