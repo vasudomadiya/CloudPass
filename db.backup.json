@@ -474,5 +474,30 @@
     "status": "expired",
     "isPasswordProtected": false,
     "deleteToken": "9NN27VRZ"
+  },
+  {
+    "id": "files-1789471425125-438122584.txt",
+    "code": "261013",
+    "filename": "files-1789471425125-438122584.txt",
+    "originalName": "twilio_2FA_recovery_code.txt",
+    "fileType": "text/plain",
+    "fileSize": 24,
+    "files": [
+      {
+        "id": "files-1789471425125-438122584.txt",
+        "filename": "files-1789471425125-438122584.txt",
+        "originalName": "twilio_2FA_recovery_code.txt",
+        "fileType": "text/plain",
+        "fileSize": 24
+      }
+    ],
+    "expiry": "2026-09-15T12:23:45.136Z",
+    "expiryDuration": "1 Hour",
+    "downloadLimit": null,
+    "downloadCount": 0,
+    "createdAt": "2026-09-15T11:23:45.140Z",
+    "status": "active",
+    "isPasswordProtected": false,
+    "deleteToken": "QR22UREK"
   }
 ]

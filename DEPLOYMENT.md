@@ -38,6 +38,11 @@ Fill in the form:
 - **Start Command:** `npm run start`
 - **Plan:** `Free` (or Pro if needed)
 
+If the service was created manually in the Render dashboard, set these values
+in **Settings** → **Build & Deploy**. Do not use `node index.js`: this project
+does not have an `index.js` entry point. The build creates `dist/server.cjs`,
+and the `start` script runs that file.
+
 ### 1.4 Environment Variables
 
 Click **"Advanced"** → **"Add Environment Variable"**:
@@ -108,6 +113,18 @@ curl https://filepass26-backend.onrender.com/api/admin/stats
 ### Test Frontend
 
 Visit: `https://filepass26.vercel.app`
+
+### Vercel SSO / manifest.json CORS Error
+
+If the browser reports a CORS error for `/manifest.json` and shows a redirect
+to `vercel.com/sso-api`, the Vercel deployment is protected by Authentication.
+This is not an Express CORS issue: Vercel redirects the manifest request before
+the application can respond.
+
+In Vercel, open **Project Settings** → **Deployment Protection** and disable
+Vercel Authentication for the public production deployment. Alternatively,
+open the public production domain instead of a protected preview URL. Keep the
+`<link rel="manifest" href="/manifest.json" />` entry in `index.html`.
 
 ---
 
