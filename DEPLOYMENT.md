@@ -39,9 +39,9 @@ Fill in the form:
 - **Plan:** `Free` (or Pro if needed)
 
 If the service was created manually in the Render dashboard, set these values
-in **Settings** → **Build & Deploy**. Do not use `node index.js`: this project
-does not have an `index.js` entry point. The build creates `dist/server.cjs`,
-and the `start` script runs that file.
+in **Settings** → **Build & Deploy**. The repository also includes an
+`index.js` compatibility entry point, so the old `node index.js` command can
+start the service, but `npm run start` remains the preferred command.
 
 ### 1.4 Environment Variables
 
