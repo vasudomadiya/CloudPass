@@ -175,16 +175,12 @@ open the public production domain instead of a protected preview URL. Keep the
 
 ### CORS Errors
 
-Add to backend [backend/app.ts](backend/app.ts):
-
-```typescript
-app.use(
-  cors({
-    origin: ["https://filepass26.vercel.app", "http://localhost:3000"],
-    credentials: true,
-  }),
-);
-```
+The backend allowlist in [backend/app.ts](backend/app.ts) includes the
+production domain, Vercel preview domains, and local development ports. After
+changing it, redeploy the Render service so the new middleware is running.
+If the response still has no `Access-Control-Allow-Origin` header, Render is
+serving an older deployment or the service is not running the repository's
+current start command.
 
 ### 503 Service Unavailable (Free Tier)
 

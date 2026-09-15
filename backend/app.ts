@@ -8,13 +8,33 @@ import { cleanExpiredFiles } from "./services/fileService";
 export async function createApp() {
   const app = express();
 
-  // CORS for dev (Vite runs on 5173)
+  const allowedOrigins = new Set([
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "https://filepass26.vercel.app",
+  ]);
+
+  const isAllowedOrigin = (origin: string) =>
+    allowedOrigins.has(origin) ||
+    /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(origin);
+
   app.use((req, res, next) => {
     const origin = req.headers.origin;
-    if (origin) res.setHeader("Access-Control-Allow-Origin", origin);
-    res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    if (origin && isAllowedOrigin(origin)) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+      res.setHeader("Vary", "Origin");
+    }
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET,POST,PUT,DELETE,OPTIONS",
+    );
     res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
-    if (req.method === "OPTIONS") return res.sendStatus(204);
+    if (req.method === "OPTIONS") {
+      if (!origin || !isAllowedOrigin(origin)) {
+        return res.status(403).json({ error: "Origin not allowed." });
+      }
+      return res.sendStatus(204);
+    }
     next();
   });
 
@@ -40,14 +60,16 @@ export async function createApp() {
 
   // Multer error handler (oversized files, etc.)
   app.use((err: any, req: Request, res: Response, next: NextFunction) => {
-    if (err?.code === 'LIMIT_FILE_SIZE') {
-      return res.status(413).json({ error: 'File too large. Maximum size is 5GB.' });
+    if (err?.code === "LIMIT_FILE_SIZE") {
+      return res
+        .status(413)
+        .json({ error: "File too large. Maximum size is 5GB." });
     }
-    if (err?.code === 'LIMIT_UNEXPECTED_FILE') {
-      return res.status(400).json({ error: 'Unexpected file field.' });
+    if (err?.code === "LIMIT_UNEXPECTED_FILE") {
+      return res.status(400).json({ error: "Unexpected file field." });
     }
-    console.error('Unhandled error:', err);
-    res.status(500).json({ error: err?.message || 'Internal server error.' });
+    console.error("Unhandled error:", err);
+    res.status(500).json({ error: err?.message || "Internal server error." });
   });
 
   return app;
