@@ -16,6 +16,7 @@ export async function createApp() {
 
   const isAllowedOrigin = (origin: string) =>
     allowedOrigins.has(origin) ||
+    /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin) ||
     /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(origin);
 
   app.use((req, res, next) => {

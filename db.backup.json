@@ -499,5 +499,30 @@
     "status": "active",
     "isPasswordProtected": false,
     "deleteToken": "QR22UREK"
+  },
+  {
+    "id": "files-1789473018911-327988011.pdf",
+    "code": "301349",
+    "filename": "files-1789473018911-327988011.pdf",
+    "originalName": "Vasu Domadiya Resume.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 91769,
+    "files": [
+      {
+        "id": "files-1789473018911-327988011.pdf",
+        "filename": "files-1789473018911-327988011.pdf",
+        "originalName": "Vasu Domadiya Resume.pdf",
+        "fileType": "application/pdf",
+        "fileSize": 91769
+      }
+    ],
+    "expiry": "2026-09-15T12:50:18.916Z",
+    "expiryDuration": "1 Hour",
+    "downloadLimit": null,
+    "downloadCount": 0,
+    "createdAt": "2026-09-15T11:50:18.919Z",
+    "status": "active",
+    "isPasswordProtected": false,
+    "deleteToken": "6VWN5KY3"
   }
 ]
