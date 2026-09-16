@@ -12,6 +12,7 @@ export async function createApp() {
     "http://localhost:3000",
     "http://localhost:5173",
     "https://filepass26.vercel.app",
+    "https://cloud-pass.vercel.app",
   ]);
 
   const isAllowedOrigin = (origin: string) =>

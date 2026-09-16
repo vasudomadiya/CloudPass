@@ -2,7 +2,7 @@
 
 ## 🚀 Deployment Architecture
 
-- **Frontend:** Vercel (filepass26.vercel.app)
+- **Frontend:** Vercel (cloud-pass.vercel.app)
 - **Backend:** Render (render.com)
 
 ## Deployment Architecture
@@ -112,7 +112,7 @@ curl https://filepass26-backend.onrender.com/api/admin/stats
 
 ### Test Frontend
 
-Visit: `https://filepass26.vercel.app`
+Visit: `https://cloud-pass.vercel.app`
 
 ### Vercel SSO / manifest.json CORS Error
 
